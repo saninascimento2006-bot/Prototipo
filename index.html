@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linha Fina — Papelaria & Impressão</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER FIXO
+  ═══════════════════════════════════════ -->
+  <header class="header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="#inicio" class="logo">
+        <div class="logo-icon">
+          <i class="ph ph-notepad"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Linha Fina</span>
+          <span class="logo-sub">Papelaria · Impressão · Conveniência</span>
+        </div>
+      </a>
+
+      <!-- Nav -->
+      <nav class="nav">
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#novidades" class="nav-link">Novidades</a>
+        <a href="#produtos" class="nav-link">Produtos</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <!-- WhatsApp CTA -->
+      <a href="https://wa.me/5511940028922" target="_blank" class="btn-whatsapp">
+        <i class="ph ph-whatsapp-logo"></i>
+        <span>Fale conosco<br/>pelo WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="inicio" class="hero">
+    <div class="hero-bg">
+      <!-- Bubbles decorativas -->
+      <span class="bubble b1"></span>
+      <span class="bubble b2"></span>
+      <span class="bubble b3"></span>
+      <span class="bubble b4"></span>
+    </div>
+
+    <div class="hero-card glass">
+      <!-- Lado esquerdo -->
+      <div class="hero-content">
+        <div class="badge-new">
+          <i class="ph ph-star-four"></i>
+          Novidades da semana
+        </div>
+
+        <h1 class="hero-title">
+          Tudo o que você precisa,<br/>
+          <span class="hero-highlight">pertinho de você!</span>
+        </h1>
+
+        <p class="hero-desc">
+          Material escolar, papelaria, suprimentos de escritório,<br/>
+          serviços de impressão e muito mais.
+        </p>
+
+        <!-- Barra de busca -->
+        <div class="search-bar">
+          <i class="ph ph-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Busque por produtos, marcas ou categorias..."
+            autocomplete="off"
+          />
+          <button class="btn-buscar" onclick="buscar()">Buscar</button>
+        </div>
+      </div>
+
+      <!-- Lado direito -->
+      <div class="hero-img-wrap">
+        <div class="hero-sticker">
+          <span>Mais<br/>praticidade<br/>no seu dia!</span>
+          <i class="ph ph-heart"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CATÁLOGO
+  ═══════════════════════════════════════ -->
+  <section id="produtos" class="catalogo-section">
+    <!-- Novidades anchor -->
+    <span id="novidades" style="display:block;height:0;margin-top:-80px;padding-top:80px;visibility:hidden;"></span>
+
+    <div class="catalogo-card glass">
+
+      <div class="catalogo-header">
+        <div class="catalogo-title-wrap">
+          <i class="ph ph-squares-four catalogo-icon"></i>
+          <div>
+            <h2 class="catalogo-title">Nosso Catálogo</h2>
+            <p class="catalogo-sub">Clique em um ícone para ver mais detalhes.</p>
+          </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filtros" id="filtros">
+          <button class="filtro active" data-cat="todos">Todos</button>
+          <button class="filtro" data-cat="escolar">Escolar</button>
+          <button class="filtro" data-cat="escritorio">Escritório</button>
+          <button class="filtro" data-cat="impressao">Impressão</button>
+          <button class="filtro" data-cat="presentes">Presentes</button>
+        </div>
+      </div>
+
+      <!-- Grade de produtos -->
+      <div class="produtos-grid" id="produtos-grid">
+
+        <!-- ── ESCOLAR ── -->
+        <div class="produto-card" data-cat="escolar" data-name="Cadernos"
+          data-desc="Cadernos universitários com capa dura, 96 folhas pautadas. Ideais para escola, faculdade ou trabalho. Disponíveis em diversas cores e estampas."
+          data-detalhes="Formato: 200mm×275mm · 96 folhas pautadas · Capa dura · Espiral dupla"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-notebook"></i></div>
+          <span class="produto-nome">Cadernos</span>
+        </div>
+
+        <div class="produto-card" data-cat="escolar" data-name="Canetas"
+          data-desc="Canetas esferográficas, gel e marca-texto em variadas cores. Escrita suave e tinta de alta durabilidade."
+          data-detalhes="Ponta: 0,5mm e 1,0mm · Cores: azul, preto, vermelho e mais · Caixas unitárias e em pacotes"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-pen"></i></div>
+          <span class="produto-nome">Canetas</span>
+        </div>
+
+        <div class="produto-card" data-cat="escolar" data-name="Lápis"
+          data-desc="Lápis grafite e de cor para todos os usos. Traço uniforme e haste resistente à quebra."
+          data-detalhes="Dureza: 2B, HB, 2H · Lápis de cor: caixas com 12, 24 ou 36 unidades · Com e sem borracha"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-pencil"></i></div>
+          <span class="produto-nome">Lápis</span>
+        </div>
+
+        <div class="produto-card" data-cat="escolar" data-name="Mochilas"
+          data-desc="Mochilas escolares com múltiplos compartimentos, resistentes e ergonômicas."
+          data-detalhes="Capacidade: 20–35 litros · Compartimento para notebook · Alças acolchoadas · Diversas cores"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-backpack"></i></div>
+          <span class="produto-nome">Mochilas</span>
+        </div>
+
+        <div class="produto-card" data-cat="escolar" data-name="Estojo"
+          data-desc="Estojos escolares simples e duplos, com fechamento em zíper e material resistente."
+          data-detalhes="Simples e duplos · Material: poliéster e couro sintético · Variadas estampas"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-pencil-line"></i></div>
+          <span class="produto-nome">Estojo</span>
+        </div>
+
+        <!-- ── ESCRITÓRIO ── -->
+        <div class="produto-card" data-cat="escritorio" data-name="Papelaria"
+          data-desc="Clipes, grampos, post-its, fitas adesivas e muito mais para organizar seu escritório."
+          data-detalhes="Post-its: pacotes de 100 folhas · Clipes niquelados · Grampos 26/6 e 23/13 · Fitas adesivas"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-paperclip"></i></div>
+          <span class="produto-nome">Papelaria</span>
+        </div>
+
+        <div class="produto-card" data-cat="escritorio" data-name="Papéis"
+          data-desc="Papel A4, carta e ofício para impressoras e copiadoras. Alta alvura e gramatura ideal."
+          data-detalhes="A4 75g/m²: resmas de 500 folhas · A4 90g/m²: premium · Papel sulfite e reciclado"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-files"></i></div>
+          <span class="produto-nome">Papéis</span>
+        </div>
+
+        <!-- ── IMPRESSÃO ── -->
+        <div class="produto-card" data-cat="impressao" data-name="Toners"
+          data-desc="Cartuchos e toners compatíveis e originais para as principais marcas de impressoras."
+          data-detalhes="Compatível com: HP, Epson, Canon, Samsung, Brother · Originais e remanufaturados · Consulte disponibilidade"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-printer"></i></div>
+          <span class="produto-nome">Toners</span>
+        </div>
+
+        <div class="produto-card" data-cat="impressao" data-name="Impressão"
+          data-desc="Serviço de impressão a preto e branco e colorida, encadernação e plastificação."
+          data-detalhes="P&B: R$ 0,20/folha · Colorida: R$ 1,00/folha · Encadernação · Plastificação A4 e A3"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-copy"></i></div>
+          <span class="produto-nome">Impressão</span>
+        </div>
+
+        <!-- ── PRESENTES ── -->
+        <div class="produto-card" data-cat="presentes" data-name="Utilidades"
+          data-desc="Agendas, planejadores, canecas, porta-retratos e pequenos presentes para todas as ocasiões."
+          data-detalhes="Agendas 2025 · Canecas personalizadas · Porta-retratos · Blocos de notas · Réguas e calculadoras"
+          onclick="abrirPopup(this)">
+          <div class="produto-icon"><i class="ph ph-calendar-check"></i></div>
+          <span class="produto-nome">Utilidades</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTATO / LOCALIZAÇÃO
+  ═══════════════════════════════════════ -->
+  <section id="contato" class="contato-section">
+    <div class="contato-card glass">
+
+      <div class="contato-bloco contato-titulo">
+        <i class="ph ph-map-pin contato-big-icon"></i>
+        <span>Nossa Localização e Contato</span>
+      </div>
+
+      <div class="contato-divider"></div>
+
+      <div class="contato-bloco">
+        <i class="ph ph-map-pin"></i>
+        <div>
+          <strong>Endereço</strong>
+          <p>Rua Serra de Parima, Itapevi, SP.</p>
+        </div>
+      </div>
+
+      <div class="contato-divider"></div>
+
+      <div class="contato-bloco">
+        <i class="ph ph-clock"></i>
+        <div>
+          <strong>Horário de funcionamento</strong>
+          <p>9h00 às 17h00</p>
+        </div>
+      </div>
+
+      <div class="contato-divider"></div>
+
+      <div class="contato-bloco">
+        <i class="ph ph-whatsapp-logo"></i>
+        <div>
+          <strong>WhatsApp</strong>
+          <p>(11) 94002-8922</p>
+        </div>
+      </div>
+
+      <div class="contato-divider"></div>
+
+      <div class="contato-bloco">
+        <a href="https://wa.me/5511940028922" target="_blank" class="btn-chamar">
+          <i class="ph ph-whatsapp-logo"></i>
+          Chamar no WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       POPUP ESTILO WINDOWS
+  ═══════════════════════════════════════ -->
+  <div class="popup-overlay" id="popup-overlay" onclick="fecharPopup(event)">
+    <div class="popup-window" id="popup-window">
+
+      <!-- Barra de título estilo Windows -->
+      <div class="popup-titlebar">
+        <div class="popup-titlebar-left">
+          <i class="ph ph-note-pencil"></i>
+          <span id="popup-win-title">Detalhes do Produto</span>
+        </div>
+        <div class="popup-titlebar-controls">
+          <button class="win-btn win-min" title="Minimizar">&#x2013;</button>
+          <button class="win-btn win-max" title="Maximizar">&#x25A1;</button>
+          <button class="win-btn win-close" onclick="fecharPopup(null)" title="Fechar">&#x2715;</button>
+        </div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div class="popup-body">
+        <div class="popup-img-placeholder">
+          <i class="ph ph-image"></i>
+          <span>Imagem do produto<br/>indisponível no momento.</span>
+        </div>
+
+        <div class="popup-info">
+          <h2 class="popup-produto-nome" id="popup-nome"></h2>
+          <p class="popup-desc" id="popup-desc"></p>
+
+          <div class="popup-detalhes-wrap">
+            <div class="popup-detalhes-label">
+              <i class="ph ph-list-bullets"></i>
+              Detalhes do produto
+            </div>
+            <ul class="popup-detalhes" id="popup-detalhes"></ul>
+          </div>
+
+          <a
+            id="popup-wa-btn"
+            href="#"
+            target="_blank"
+            class="btn-popup-wa"
+          >
+            <i class="ph ph-whatsapp-logo"></i>
+            Consultar disponibilidade via WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
