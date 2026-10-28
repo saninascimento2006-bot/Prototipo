@@ -1,0 +1,760 @@
+/* ==========================================================================
+   DESIGN SYSTEM - PINTEREST AESTHETIC GUIDELINES (DesignDoPinterest.md)
+   
+   Tokens:
+   - Primary Accent: #e60023 (Pinterest Red), Pressed: #cc001f
+   - Canvas: #ffffff
+   - Surface Soft: #fbfbf9
+   - Surface Card: #f6f6f3 (Warm-cream)
+   - Secondary BG: #e5e5e0
+   - Hairline: #dadad3
+   - Text Ink: #000000 / #111111
+   - Text Body: #33332e
+   - Text Mute: #767676
+   - Radius: 16px (rounded.md), 32px (rounded.lg), 9999px (rounded.full)
+   ========================================================================== */
+
+:root {
+  --color-primary: #e60023;
+  --color-primary-pressed: #cc001f;
+  --color-canvas: #ffffff;
+  --color-surface-soft: #fbfbf9;
+  --color-surface-card: #f6f6f3;
+  --color-secondary-bg: #e5e5e0;
+  --color-secondary-pressed: #c8c8c1;
+  --color-hairline: #e2e2dd;
+  --color-hairline-soft: #ededec;
+  --color-ink: #111111;
+  --color-body: #33332e;
+  --color-mute: #767676;
+  --color-wa: #25d366;
+  --color-wa-pressed: #1da851;
+
+  --rounded-md: 16px;
+  --rounded-lg: 32px;
+  --rounded-full: 9999px;
+
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --shadow-modal: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-surface-soft);
+  color: var(--color-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   PRIMARY TOP NAV (Sticky, clean Pinterest chrome)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline);
+  height: 72px;
+}
+
+.header-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo & Badge */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-icon-pin {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  transition: transform 0.2s ease;
+}
+
+.brand-link:hover .brand-icon-pin {
+  transform: scale(1.05);
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+  font-size: 11px;
+  color: var(--color-mute);
+  font-weight: 600;
+}
+
+/* Centered Pinterest-Style Search Bar */
+.search-wrapper {
+  flex: 1;
+  max-width: 720px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-surface-card);
+  border-radius: var(--rounded-full);
+  padding: 0 16px;
+  height: 48px;
+  transition: background-color 0.2s, box-shadow 0.2s, border 0.2s;
+  border: 1px solid transparent;
+}
+
+.search-wrapper:focus-within {
+  background-color: var(--color-canvas);
+  border: 1px solid #b5b5b0;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+  font-size: 20px;
+  color: var(--color-mute);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: var(--color-ink);
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: var(--color-mute);
+}
+
+/* Nav Actions Cluster */
+.nav-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav-anchor {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+  padding: 10px 16px;
+  border-radius: var(--rounded-full);
+  transition: background-color 0.15s;
+}
+
+.nav-anchor:hover {
+  background-color: var(--color-surface-card);
+}
+
+.nav-anchor.active {
+  background-color: var(--color-ink);
+  color: #ffffff;
+}
+
+/* Buttons */
+.btn-pinterest-red {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: var(--rounded-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn-pinterest-red:hover {
+  background-color: var(--color-primary-pressed);
+}
+
+.btn-pinterest-red:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   HERO / EDITORIAL BANNER (Pinterest Large Hero)
+   ========================================================================== */
+.hero-editorial {
+  padding: 56px 0 32px;
+}
+
+.hero-feature-card {
+  background-color: var(--color-canvas);
+  border-radius: var(--rounded-lg);
+  padding: 48px;
+  border: 1px solid var(--color-hairline-soft);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffebee;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: var(--rounded-full);
+  margin-bottom: 20px;
+}
+
+.hero-display-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin-bottom: 18px;
+}
+
+.hero-display-title span {
+  color: var(--color-primary);
+}
+
+.hero-body-text {
+  font-size: 17px;
+  color: var(--color-body);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.hero-actions-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary-bg);
+  color: var(--color-ink);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: var(--rounded-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-pressed);
+}
+
+/* Feature Pin Visual (Editorial Pinterest Card) */
+.hero-visual-card {
+  background-color: var(--color-surface-card);
+  border-radius: var(--rounded-lg);
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 300px;
+  border: 1px solid var(--color-hairline);
+}
+
+.pin-corner-pill {
+  align-self: flex-start;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--rounded-full);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.hero-art-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 30px 0;
+  color: var(--color-primary);
+}
+
+.hero-art-display i {
+  font-size: 72px;
+  filter: drop-shadow(0 8px 14px rgba(230, 0, 35, 0.15));
+}
+
+.pin-note-bottom {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-mute);
+  text-align: right;
+}
+
+/* ==========================================================================
+   CATALOG & DETAIL MODAL SPLIT (Pinterest Masonry / Filter Concept)
+   ========================================================================== */
+.catalog-section {
+  padding: 32px 0 56px;
+}
+
+.catalog-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.catalog-headline h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: var(--color-ink);
+}
+
+.catalog-headline p {
+  font-size: 14px;
+  color: var(--color-mute);
+  margin-top: 4px;
+}
+
+/* Filter Chips (Pinterest Pills) */
+.filter-chip-strip {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  background-color: var(--color-surface-card);
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--rounded-full);
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.filter-chip:hover {
+  background-color: var(--color-secondary-bg);
+}
+
+.filter-chip.active {
+  background-color: var(--color-ink);
+  color: #ffffff;
+}
+
+/* Layout: Catalog Grid (Masonry feel) + Detail Card */
+.catalog-content-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Pin-Grid (16px radius, no extra borders) */
+.pins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 14px;
+}
+
+.pin-item-card {
+  background-color: var(--color-surface-card);
+  border-radius: var(--rounded-md);
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.pin-item-card:hover {
+  transform: translateY(-4px);
+  background-color: var(--color-canvas);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--color-hairline);
+}
+
+.pin-item-card.active {
+  background-color: var(--color-canvas);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 4px 14px rgba(230, 0, 35, 0.15);
+}
+
+.pin-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--color-ink);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.pin-item-card:hover .pin-icon-wrap,
+.pin-item-card.active .pin-icon-wrap {
+  color: var(--color-primary);
+  transform: scale(1.08);
+}
+
+.pin-item-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink);
+  text-align: center;
+}
+
+/* ==========================================================================
+   PRODUCT DETAIL CARD (Modal/Card 32px radius, cream/clean surface)
+   ========================================================================== */
+.pin-detail-card {
+  background-color: var(--color-canvas);
+  border-radius: var(--rounded-lg);
+  padding: 32px;
+  border: 1px solid var(--color-hairline);
+  box-shadow: var(--shadow-modal);
+  position: sticky;
+  top: 96px;
+}
+
+.detail-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-hairline);
+  margin-bottom: 20px;
+}
+
+.detail-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-category-pill {
+  background-color: var(--color-surface-card);
+  color: var(--color-ink);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--rounded-full);
+}
+
+.detail-save-indicator {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.detail-body-split {
+  display: flex;
+  gap: 20px;
+}
+
+.detail-photo-placeholder {
+  width: 140px;
+  height: 170px;
+  background-color: var(--color-surface-card);
+  border-radius: var(--rounded-md);
+  border: 1px dashed var(--color-hairline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  color: var(--color-mute);
+  flex-shrink: 0;
+}
+
+.detail-photo-placeholder i {
+  font-size: 32px;
+  margin-bottom: 6px;
+  color: var(--color-mute);
+}
+
+.detail-photo-placeholder span {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.detail-info-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -0.4px;
+  margin-bottom: 4px;
+}
+
+.detail-specs {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.detail-desc {
+  font-size: 14px;
+  color: var(--color-body);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.specs-list-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.specs-list {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.specs-list li {
+  font-size: 13px;
+  color: var(--color-mute);
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.specs-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Button Consult WhatsApp */
+.btn-whatsapp-consult {
+  width: 100%;
+  background-color: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.btn-whatsapp-consult:hover {
+  background-color: #1da851;
+}
+
+.btn-whatsapp-consult:active {
+  transform: scale(0.98);
+}
+
+.btn-whatsapp-consult i {
+  font-size: 20px;
+}
+
+/* ==========================================================================
+   LOCATION & CONTACT (Clean Card Strip)
+   ========================================================================== */
+.contact-section {
+  padding: 24px 0 64px;
+}
+
+.contact-card-strip {
+  background-color: var(--color-canvas);
+  border-radius: var(--rounded-lg);
+  border: 1px solid var(--color-hairline);
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.contact-meta-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-icon-pill {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-surface-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--color-ink);
+}
+
+.contact-meta-text .label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-meta-text .value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   FOOTER (Pinterest Clean Footer with Hairline)
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--color-hairline);
+  padding: 32px 0;
+  background-color: var(--color-canvas);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--color-mute);
+}
+
+.footer-brand {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .catalog-content-layout {
+    grid-template-columns: 1fr;
+  }
+  .pin-detail-card {
+    position: static;
+  }
+  .hero-feature-card {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-anchor {
+    display: none;
+  }
+  .hero-display-title {
+    font-size: 34px;
+  }
+  .contact-card-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pins-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .detail-body-split {
+    flex-direction: column;
+  }
+  .detail-photo-placeholder {
+    width: 100%;
+    height: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pins-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

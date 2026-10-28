@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linha Fina — Papelaria & Impressão</title>
+  
+  <!-- Estilos e Ícones Phosphor -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       STICKY TOP NAV (Pinterest Navigation Chrome)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      
+      <!-- Logo do Site com Ícone de Papelaria em Vermelho Pinterest -->
+      <a href="#inicio" class="brand-link">
+        <div class="brand-icon-pin">
+          <i class="ph ph-notepad"></i>
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">Linha Fina</span>
+          <span class="brand-subtitle">Papelaria & Conveniência</span>
+        </div>
+      </a>
+
+      <!-- Barra de Busca Centralizada Estilo Pinterest (Pill) -->
+      <div class="search-wrapper">
+        <i class="ph ph-magnifying-glass search-icon"></i>
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="search-input" 
+          placeholder="Pesquisar por caderno, canetas, papel, serviços..." 
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Links de Navegação e Botão de Ação -->
+      <nav class="nav-cluster">
+        <a href="#inicio" class="nav-anchor active">Início</a>
+        <a href="#catalogo" class="nav-anchor">Produtos</a>
+        <a href="#contato" class="nav-anchor">Contato</a>
+
+        <a href="https://wa.me/5511940028922" target="_blank" class="btn-pinterest-red">
+          <i class="ph ph-whatsapp-logo"></i>
+          Fale Conosco
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO / FEATURE SECTION (Design Pinterest Editorial)
+       ========================================================================== -->
+  <main>
+    <section id="inicio" class="hero-editorial">
+      <div class="container">
+        
+        <div class="hero-feature-card">
+          <!-- Lado Esquerdo: Mensagem e Ação -->
+          <div class="hero-text-side">
+            <div class="hero-pill-badge">
+              <i class="ph ph-sparkle"></i>
+              Novidades da semana
+            </div>
+
+            <h1 class="hero-display-title">
+              Tudo o que você precisa, <span>pertinho de você!</span>
+            </h1>
+
+            <p class="hero-body-text">
+              Material escolar completo, papelaria criativa, suprimentos de escritório e serviços rápidos de impressão com atendimento de conveniência de bairro.
+            </p>
+
+            <div class="hero-actions-row">
+              <a href="#catalogo" class="btn-pinterest-red">
+                Ver Catálogo de Itens
+              </a>
+              <a href="#contato" class="btn-secondary">
+                Onde estamos
+              </a>
+            </div>
+          </div>
+
+          <!-- Lado Direito: Card Ilustrativo Estilo Pin Feature -->
+          <div class="hero-visual-card">
+            <span class="pin-corner-pill">Mais praticidade no seu dia ♡</span>
+            
+            <div class="hero-art-display">
+              <i class="ph ph-books"></i>
+              <i class="ph ph-pencil-simple"></i>
+              <i class="ph ph-printer"></i>
+            </div>
+
+            <div class="pin-note-bottom">
+              Itapevi, SP · Linha Fina Papelaria
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CATÁLOGO COM FILTRO DE CHIPS E DETALHES ESTILO PINTEREST
+         ========================================================================== -->
+    <section id="catalogo" class="catalog-section">
+      <div class="container">
+
+        <!-- Barra de Cabeçalho do Catálogo com Chips de Filtro -->
+        <div class="catalog-header-bar">
+          <div class="catalog-headline">
+            <h2>Nosso Catálogo</h2>
+            <p>Selecione um item para ver detalhes e solicitar pelo WhatsApp.</p>
+          </div>
+
+          <!-- Chips Redondos Estilo Pinterest (Pills) -->
+          <div class="filter-chip-strip">
+            <button class="filter-chip active" onclick="filtrarCategoria('todos', this)">Todos</button>
+            <button class="filter-chip" onclick="filtrarCategoria('escolar', this)">Escolar</button>
+            <button class="filter-chip" onclick="filtrarCategoria('escritorio', this)">Escritório</button>
+            <button class="filter-chip" onclick="filtrarCategoria('impressao', this)">Impressão</button>
+            <button class="filter-chip" onclick="filtrarCategoria('presentes', this)">Presentes</button>
+          </div>
+        </div>
+
+        <!-- Layout Dividido: Grid de Cards + Janela de Detalhe -->
+        <div class="catalog-content-layout">
+
+          <!-- Grade de Pins dos Produtos -->
+          <div class="pins-grid" id="pinsGrid">
+            
+            <div class="pin-item-card active" data-categoria="escolar" onclick="abrirDetalhe('Cadernos Universitários', 'Escolar', 'Capa dura · 96 folhas pautadas', 'Caderno universitário ideal para a rotina de estudos escolares, faculdade ou organização do dia a dia no escritório.', ['Formato: 200mm x 275mm', '96 folhas pautadas', 'Capa dura resistente', 'Espiral duplo'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-notebook"></i></div>
+              <span class="pin-item-name">Cadernos</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Canetas Diversas', 'Escolar', 'Esferográfica · Gel · Marca-texto', 'Canetas de alta qualidade e escrita macia. Disponíveis em diversas cores e tipos de ponta para todas as ocasiões.', ['Ponta fina 0.7mm e 1.0mm', 'Cores: azul, preto, vermelho e pastel', 'Tinta de alta durabilidade'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-pen-nib"></i></div>
+              <span class="pin-item-name">Canetas</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Lápis e Grafites', 'Escolar', 'Grafite HB / 2B · Lápis de cor', 'Linha de lápis pretos para escrita suave e caixas de lápis de cor vibrantes para trabalhos artísticos.', ['Mina resistente e macia', 'Fácil de apontar', 'Caixas com 12 e 24 cores'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-pencil-simple-slash"></i></div>
+              <span class="pin-item-name">Lápis</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Mochilas Escolares', 'Escolar', 'Ergonômica · Vários compartimentos', 'Mochilas modernas e reforçadas para carregar livros, cadernos e materiais com conforto.', ['Compartimento para notebook', 'Alças acolchoadas', 'Várias cores e estampas'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-backpack"></i></div>
+              <span class="pin-item-name">Mochilas</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Estojo Organizador', 'Escolar', 'Compacto · Zíper duplo', 'Guarde com segurança seus lápis, borrachas, apontadores e canetas de forma prática.', ['Disponível em 1 e 2 zíperes', 'Material fácil de limpar', 'Cores lisas e temáticas'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-pencil-line"></i></div>
+              <span class="pin-item-name">Estojo</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="escritorio" onclick="abrirDetalhe('Papelaria & Acessórios', 'Escritório', 'Clipes · Grampos · Post-its', 'Tudo para a organização eficiente do seu local de trabalho, estudos ou home office.', ['Post-its autocolantes', 'Clipes niquelados e coloridos', 'Grampeadores e tesouras'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-paperclip"></i></div>
+              <span class="pin-item-name">Papelaria</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="escritorio" onclick="abrirDetalhe('Papéis e Sulfites', 'Escritório', 'A4 · 75g e 90g · Resmas', 'Folhas de papel sulfite de excelente alvura para impressões nítidas e fotocópias sem atolamentos.', ['Formato A4 (210 x 297mm)', 'Resma com 500 folhas', 'Pacotes avulsos disponíveis'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-files"></i></div>
+              <span class="pin-item-name">Papéis</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="impressao" onclick="abrirDetalhe('Toners & Cartuchos', 'Impressão', 'Recargas · Compatíveis · Originais', 'Suprimentos para impressoras das principais marcas com excelente rendimento por página.', ['Modelos HP, Epson, Brother e Canon', 'Preto e colorido', 'Pronta-entrega e encomenda'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-printer"></i></div>
+              <span class="pin-item-name">Toners</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="impressao" onclick="abrirDetalhe('Serviços de Impressão', 'Impressão', 'P&B · Colorida · Encadernação', 'Impressão rápida de documentos, trabalhos acadêmicos, digitalização e plastificação com qualidade profissional.', ['Impressão via WhatsApp/E-mail', 'Encadernação espiral até 450 folhas', 'Plastificação resistente'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-copy"></i></div>
+              <span class="pin-item-name">Impressão</span>
+            </div>
+
+            <div class="pin-item-card" data-categoria="presentes" onclick="abrirDetalhe('Utilidades & Presentes', 'Presentes', 'Agendas · Artigos de mesa · Canecas', 'Opções especiais de presentes, itens criativos e utilidades de conveniência.', ['Agendas e planners', 'Embalagens de presente', 'Acessórios criativos'], this)">
+              <div class="pin-icon-wrap"><i class="ph ph-calendar-blank"></i></div>
+              <span class="pin-item-name">Utilidades</span>
+            </div>
+
+          </div>
+
+          <!-- Card de Detalhe Fiel ao Protótipo com Estilo Pinterest (Radius 32px) -->
+          <div class="pin-detail-card" id="detailCard">
+            
+            <div class="detail-card-header">
+              <div class="detail-badge-wrap">
+                <span class="detail-category-pill" id="detailCategory">Escolar</span>
+                <span class="detail-category-pill">Disponível na loja</span>
+              </div>
+              <div class="detail-save-indicator">
+                <i class="ph ph-bookmark-simple"></i>
+              </div>
+            </div>
+
+            <div class="detail-body-split">
+              <!-- Placeholder de imagem do protótipo -->
+              <div class="detail-photo-placeholder">
+                <i class="ph ph-image"></i>
+                <span>Imagem do produto indisponível no momento.</span>
+              </div>
+
+              <!-- Especificações do Produto -->
+              <div class="detail-info-pane">
+                <h3 class="detail-title" id="detailTitle">Cadernos Universitários</h3>
+                <div class="detail-specs" id="detailSpecs">Capa dura · 96 folhas pautadas</div>
+                
+                <p class="detail-desc" id="detailDesc">
+                  Caderno universitário ideal para a rotina de estudos escolares, faculdade ou organização do dia a dia no escritório.
+                </p>
+
+                <div class="specs-list-title">Detalhes do produto</div>
+                <ul class="specs-list" id="detailList">
+                  <li>Formato: 200mm x 275mm</li>
+                  <li>96 folhas pautadas</li>
+                  <li>Capa dura resistente</li>
+                  <li>Espiral duplo</li>
+                </ul>
+
+                <!-- Ação Direta para WhatsApp -->
+                <a 
+                  href="https://wa.me/5511940028922?text=Olá,%20gostaria%20de%20saber%20a%20disponibilidade%20do%20produto:%20Cadernos%20Universitários" 
+                  target="_blank" 
+                  class="btn-whatsapp-consult"
+                  id="detailWaBtn"
+                >
+                  <i class="ph ph-whatsapp-logo"></i>
+                  Consultar disponibilidade via WhatsApp
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LOCALIZAÇÃO E CONTATO (Strip Card Limpo)
+         ========================================================================== -->
+    <section id="contato" class="contact-section">
+      <div class="container">
+        <div class="contact-card-strip">
+
+          <div class="contact-meta-group">
+            <div class="contact-icon-pill">
+              <i class="ph ph-map-pin"></i>
+            </div>
+            <div class="contact-meta-text">
+              <div class="label">Endereço</div>
+              <div class="value">Rua Serra de Parima, Itapevi, SP.</div>
+            </div>
+          </div>
+
+          <div class="contact-meta-group">
+            <div class="contact-icon-pill">
+              <i class="ph ph-clock"></i>
+            </div>
+            <div class="contact-meta-text">
+              <div class="label">Horário de funcionamento</div>
+              <div class="value">9h00 às 17h00</div>
+            </div>
+          </div>
+
+          <div class="contact-meta-group">
+            <div class="contact-icon-pill">
+              <i class="ph ph-whatsapp-logo"></i>
+            </div>
+            <div class="contact-meta-text">
+              <div class="label">WhatsApp Oficial</div>
+              <div class="value">(11) 94002-8922</div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5511940028922" target="_blank" class="btn-pinterest-red">
+            <i class="ph ph-whatsapp-logo"></i>
+            Chamar no WhatsApp
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER (Limpo com Hairline)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        Linha Fina © 2026 — Papelaria & Conveniência
+      </div>
+      <div>
+        Atendimento em Itapevi, SP · Material escolar e impressões
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCRIPTS DE INTERATIVIDADE
+       ========================================================================== -->
+  <script>
+    // Atualiza a janela de detalhes ao clicar em qualquer item
+    function abrirDetalhe(nome, categoria, specs, desc, lista, cardElem) {
+      document.querySelectorAll('.pin-item-card').forEach(c => c.classList.remove('active'));
+      if (cardElem) cardElem.classList.add('active');
+
+      document.getElementById('detailTitle').innerText = nome;
+      document.getElementById('detailCategory').innerText = categoria;
+      document.getElementById('detailSpecs').innerText = specs;
+      document.getElementById('detailDesc').innerText = desc;
+
+      const ul = document.getElementById('detailList');
+      ul.innerHTML = '';
+      lista.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = item;
+        ul.appendChild(li);
+      });
+
+      const btn = document.getElementById('detailWaBtn');
+      btn.href = `https://wa.me/5511940028922?text=Olá,%20gostaria%20de%20saber%20a%20disponibilidade%20do%20produto:%20${encodeURIComponent(nome)}`;
+    }
+
+    // Filtrar por Categoria (Pills de filtro)
+    function filtrarCategoria(categoria, btn) {
+      document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.pin-item-card');
+      cards.forEach(card => {
+        if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Barra de pesquisa dinâmica
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function() {
+      const termo = this.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.pin-item-card');
+
+      cards.forEach(card => {
+        const nome = card.querySelector('.pin-item-name').innerText.toLowerCase();
+        if (nome.includes(termo)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
