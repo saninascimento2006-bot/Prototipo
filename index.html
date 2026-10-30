@@ -4,331 +4,523 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Linha Fina — Papelaria & Impressão</title>
+  
+  <!-- Fontes do Google: Finger Paint (Títulos/Subtítulos) e Pangolin (Textos/Demais Elementos com suporte a acentos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Pangolin&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Phosphor Icons -->
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
-
+  <!-- Estilos e Ícones Phosphor -->
   <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════
-       HEADER FIXO
-  ═══════════════════════════════════════ -->
-  <header class="header">
-    <div class="header-inner">
+  <!-- Bolhas Flutuantes Frutiger Aero Kawaii com Brilho (Subindo) -->
+  <div class="bubble-float b-1"></div>
+  <div class="bubble-float b-2"></div>
+  <div class="bubble-float b-3"></div>
+  <div class="bubble-float b-4"></div>
+  <div class="bubble-float b-5"></div>
+  <div class="bubble-float b-6"></div>
+  <div class="bubble-float b-7"></div>
+  <div class="bubble-float b-8"></div>
 
-      <!-- Logo -->
-      <a href="#inicio" class="logo">
-        <div class="logo-icon">
+  <!-- ==========================================================================
+       STICKY TOP NAV (Aero Glass Chrome)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      
+      <!-- Logo do Site com Ícone em Azul Céu / Gradiente Aero -->
+      <a href="#inicio" class="brand-link">
+        <div class="brand-icon-pin">
           <i class="ph ph-notepad"></i>
         </div>
-        <div class="logo-text">
-          <span class="logo-name">Linha Fina</span>
-          <span class="logo-sub">Papelaria · Impressão · Conveniência</span>
+        <div class="brand-info">
+          <span class="brand-title">Linha Fina</span>
+          <span class="brand-subtitle">Papelaria • Impressão • Conveniência</span>
         </div>
       </a>
 
-      <!-- Nav -->
-      <nav class="nav">
-        <a href="#inicio" class="nav-link active">Início</a>
-        <a href="#novidades" class="nav-link">Novidades</a>
-        <a href="#produtos" class="nav-link">Produtos</a>
-        <a href="#contato" class="nav-link">Contato</a>
+      <!-- Barra de Busca com Efeito Vidro e Brilho -->
+      <div class="search-wrapper">
+        <i class="ph ph-magnifying-glass search-icon"></i>
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="search-input" 
+          placeholder="Busque por cadernos, canetas, papéis, serviços..." 
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Links de Navegação, Interruptor de Bolhas e Botão de Ação Kawaii -->
+      <nav class="nav-cluster">
+        <a href="#inicio" class="nav-anchor active" title="Início">
+          <i class="ph ph-house nav-icon"></i>
+          <span class="nav-text">Início</span>
+        </a>
+        <a href="#catalogo" class="nav-anchor" title="Produtos">
+          <i class="ph ph-squares-four nav-icon"></i>
+          <span class="nav-text">Produtos</span>
+        </a>
+        <a href="#contato" class="nav-anchor" title="Contato">
+          <i class="ph ph-map-pin nav-icon"></i>
+          <span class="nav-text">Contato</span>
+        </a>
+
+        <!-- Interruptor Kawaii de Bolhas (On / Off) -->
+        <div class="bubble-toggle-wrap" title="Ligar / Desligar Bolhas">
+          <span class="toggle-label"><i class="ph ph-drop"></i> <span class="toggle-text">Bolhas</span></span>
+          <label class="switch-bubble">
+            <input type="checkbox" id="bubbleToggle" checked>
+            <span class="slider-bubble"></span>
+          </label>
+        </div>
+
+        <a href="https://wa.me/5511940028922" target="_blank" class="btn-kawaii-pink" title="WhatsApp">
+          <i class="ph ph-whatsapp-logo"></i>
+          <span class="wa-btn-text">Fale Conosco</span>
+        </a>
       </nav>
 
-      <!-- WhatsApp CTA -->
-      <a href="https://wa.me/5511940028922" target="_blank" class="btn-whatsapp">
-        <i class="ph ph-whatsapp-logo"></i>
-        <span>Fale conosco<br/>pelo WhatsApp</span>
-      </a>
     </div>
   </header>
 
-  <!-- ═══════════════════════════════════════
-       HERO
-  ═══════════════════════════════════════ -->
-  <section id="inicio" class="hero">
-    <div class="hero-bg">
-      <!-- Bubbles decorativas -->
-      <span class="bubble b1"></span>
-      <span class="bubble b2"></span>
-      <span class="bubble b3"></span>
-      <span class="bubble b4"></span>
-    </div>
-
-    <div class="hero-card glass">
-      <!-- Lado esquerdo -->
-      <div class="hero-content">
-        <div class="badge-new">
-          <i class="ph ph-star-four"></i>
-          Novidades da semana
-        </div>
-
-        <h1 class="hero-title">
-          Tudo o que você precisa,<br/>
-          <span class="hero-highlight">pertinho de você!</span>
-        </h1>
-
-        <p class="hero-desc">
-          Material escolar, papelaria, suprimentos de escritório,<br/>
-          serviços de impressão e muito mais.
-        </p>
-
-        <!-- Barra de busca -->
-        <div class="search-bar">
-          <i class="ph ph-magnifying-glass search-icon"></i>
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Busque por produtos, marcas ou categorias..."
-            autocomplete="off"
-          />
-          <button class="btn-buscar" onclick="buscar()">Buscar</button>
-        </div>
-      </div>
-
-      <!-- Lado direito -->
-      <div class="hero-img-wrap">
-        <div class="hero-sticker">
-          <span>Mais<br/>praticidade<br/>no seu dia!</span>
-          <i class="ph ph-heart"></i>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-       CATÁLOGO
-  ═══════════════════════════════════════ -->
-  <section id="produtos" class="catalogo-section">
-    <!-- Novidades anchor -->
-    <span id="novidades" style="display:block;height:0;margin-top:-80px;padding-top:80px;visibility:hidden;"></span>
-
-    <div class="catalogo-card glass">
-
-      <div class="catalogo-header">
-        <div class="catalogo-title-wrap">
-          <i class="ph ph-squares-four catalogo-icon"></i>
-          <div>
-            <h2 class="catalogo-title">Nosso Catálogo</h2>
-            <p class="catalogo-sub">Clique em um ícone para ver mais detalhes.</p>
-          </div>
-        </div>
-
-        <!-- Filtros -->
-        <div class="filtros" id="filtros">
-          <button class="filtro active" data-cat="todos">Todos</button>
-          <button class="filtro" data-cat="escolar">Escolar</button>
-          <button class="filtro" data-cat="escritorio">Escritório</button>
-          <button class="filtro" data-cat="impressao">Impressão</button>
-          <button class="filtro" data-cat="presentes">Presentes</button>
-        </div>
-      </div>
-
-      <!-- Grade de produtos -->
-      <div class="produtos-grid" id="produtos-grid">
-
-        <!-- ── ESCOLAR ── -->
-        <div class="produto-card" data-cat="escolar" data-name="Cadernos"
-          data-desc="Cadernos universitários com capa dura, 96 folhas pautadas. Ideais para escola, faculdade ou trabalho. Disponíveis em diversas cores e estampas."
-          data-detalhes="Formato: 200mm×275mm · 96 folhas pautadas · Capa dura · Espiral dupla"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-notebook"></i></div>
-          <span class="produto-nome">Cadernos</span>
-        </div>
-
-        <div class="produto-card" data-cat="escolar" data-name="Canetas"
-          data-desc="Canetas esferográficas, gel e marca-texto em variadas cores. Escrita suave e tinta de alta durabilidade."
-          data-detalhes="Ponta: 0,5mm e 1,0mm · Cores: azul, preto, vermelho e mais · Caixas unitárias e em pacotes"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-pen"></i></div>
-          <span class="produto-nome">Canetas</span>
-        </div>
-
-        <div class="produto-card" data-cat="escolar" data-name="Lápis"
-          data-desc="Lápis grafite e de cor para todos os usos. Traço uniforme e haste resistente à quebra."
-          data-detalhes="Dureza: 2B, HB, 2H · Lápis de cor: caixas com 12, 24 ou 36 unidades · Com e sem borracha"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-pencil"></i></div>
-          <span class="produto-nome">Lápis</span>
-        </div>
-
-        <div class="produto-card" data-cat="escolar" data-name="Mochilas"
-          data-desc="Mochilas escolares com múltiplos compartimentos, resistentes e ergonômicas."
-          data-detalhes="Capacidade: 20–35 litros · Compartimento para notebook · Alças acolchoadas · Diversas cores"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-backpack"></i></div>
-          <span class="produto-nome">Mochilas</span>
-        </div>
-
-        <div class="produto-card" data-cat="escolar" data-name="Estojo"
-          data-desc="Estojos escolares simples e duplos, com fechamento em zíper e material resistente."
-          data-detalhes="Simples e duplos · Material: poliéster e couro sintético · Variadas estampas"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-pencil-line"></i></div>
-          <span class="produto-nome">Estojo</span>
-        </div>
-
-        <!-- ── ESCRITÓRIO ── -->
-        <div class="produto-card" data-cat="escritorio" data-name="Papelaria"
-          data-desc="Clipes, grampos, post-its, fitas adesivas e muito mais para organizar seu escritório."
-          data-detalhes="Post-its: pacotes de 100 folhas · Clipes niquelados · Grampos 26/6 e 23/13 · Fitas adesivas"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-paperclip"></i></div>
-          <span class="produto-nome">Papelaria</span>
-        </div>
-
-        <div class="produto-card" data-cat="escritorio" data-name="Papéis"
-          data-desc="Papel A4, carta e ofício para impressoras e copiadoras. Alta alvura e gramatura ideal."
-          data-detalhes="A4 75g/m²: resmas de 500 folhas · A4 90g/m²: premium · Papel sulfite e reciclado"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-files"></i></div>
-          <span class="produto-nome">Papéis</span>
-        </div>
-
-        <!-- ── IMPRESSÃO ── -->
-        <div class="produto-card" data-cat="impressao" data-name="Toners"
-          data-desc="Cartuchos e toners compatíveis e originais para as principais marcas de impressoras."
-          data-detalhes="Compatível com: HP, Epson, Canon, Samsung, Brother · Originais e remanufaturados · Consulte disponibilidade"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-printer"></i></div>
-          <span class="produto-nome">Toners</span>
-        </div>
-
-        <div class="produto-card" data-cat="impressao" data-name="Impressão"
-          data-desc="Serviço de impressão a preto e branco e colorida, encadernação e plastificação."
-          data-detalhes="P&B: R$ 0,20/folha · Colorida: R$ 1,00/folha · Encadernação · Plastificação A4 e A3"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-copy"></i></div>
-          <span class="produto-nome">Impressão</span>
-        </div>
-
-        <!-- ── PRESENTES ── -->
-        <div class="produto-card" data-cat="presentes" data-name="Utilidades"
-          data-desc="Agendas, planejadores, canecas, porta-retratos e pequenos presentes para todas as ocasiões."
-          data-detalhes="Agendas 2025 · Canecas personalizadas · Porta-retratos · Blocos de notas · Réguas e calculadoras"
-          onclick="abrirPopup(this)">
-          <div class="produto-icon"><i class="ph ph-calendar-check"></i></div>
-          <span class="produto-nome">Utilidades</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-       CONTATO / LOCALIZAÇÃO
-  ═══════════════════════════════════════ -->
-  <section id="contato" class="contato-section">
-    <div class="contato-card glass">
-
-      <div class="contato-bloco contato-titulo">
-        <i class="ph ph-map-pin contato-big-icon"></i>
-        <span>Nossa Localização e Contato</span>
-      </div>
-
-      <div class="contato-divider"></div>
-
-      <div class="contato-bloco">
-        <i class="ph ph-map-pin"></i>
-        <div>
-          <strong>Endereço</strong>
-          <p>Rua Serra de Parima, Itapevi, SP.</p>
-        </div>
-      </div>
-
-      <div class="contato-divider"></div>
-
-      <div class="contato-bloco">
-        <i class="ph ph-clock"></i>
-        <div>
-          <strong>Horário de funcionamento</strong>
-          <p>9h00 às 17h00</p>
-        </div>
-      </div>
-
-      <div class="contato-divider"></div>
-
-      <div class="contato-bloco">
-        <i class="ph ph-whatsapp-logo"></i>
-        <div>
-          <strong>WhatsApp</strong>
-          <p>(11) 94002-8922</p>
-        </div>
-      </div>
-
-      <div class="contato-divider"></div>
-
-      <div class="contato-bloco">
-        <a href="https://wa.me/5511940028922" target="_blank" class="btn-chamar">
-          <i class="ph ph-whatsapp-logo"></i>
-          Chamar no WhatsApp
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-       POPUP ESTILO WINDOWS
-  ═══════════════════════════════════════ -->
-  <div class="popup-overlay" id="popup-overlay" onclick="fecharPopup(event)">
-    <div class="popup-window" id="popup-window">
-
-      <!-- Barra de título estilo Windows -->
-      <div class="popup-titlebar">
-        <div class="popup-titlebar-left">
-          <i class="ph ph-note-pencil"></i>
-          <span id="popup-win-title">Detalhes do Produto</span>
-        </div>
-        <div class="popup-titlebar-controls">
-          <button class="win-btn win-min" title="Minimizar">&#x2013;</button>
-          <button class="win-btn win-max" title="Maximizar">&#x25A1;</button>
-          <button class="win-btn win-close" onclick="fecharPopup(null)" title="Fechar">&#x2715;</button>
-        </div>
-      </div>
-
-      <!-- Conteúdo -->
-      <div class="popup-body">
-        <div class="popup-img-placeholder">
-          <i class="ph ph-image"></i>
-          <span>Imagem do produto<br/>indisponível no momento.</span>
-        </div>
-
-        <div class="popup-info">
-          <h2 class="popup-produto-nome" id="popup-nome"></h2>
-          <p class="popup-desc" id="popup-desc"></p>
-
-          <div class="popup-detalhes-wrap">
-            <div class="popup-detalhes-label">
-              <i class="ph ph-list-bullets"></i>
-              Detalhes do produto
+  <!-- ==========================================================================
+       HERO / FEATURE SECTION (Frutiger Aero Glass Card)
+       ========================================================================== -->
+  <main>
+    <section id="inicio" class="hero-editorial">
+      <div class="container">
+        
+        <div class="hero-feature-card">
+          <!-- Lado Esquerdo: Mensagem e Ação -->
+          <div class="hero-text-side">
+            <div class="hero-pill-badge">
+              <i class="ph ph-sparkle"></i>
+              Novidades da semana
             </div>
-            <ul class="popup-detalhes" id="popup-detalhes"></ul>
+
+            <h1 class="hero-display-title">
+              Tudo o que você precisa,<br/>
+              <span>pertinho de você!</span>
+            </h1>
+
+            <p class="hero-body-text">
+              Material escolar fofo e completo, papelaria criativa, suprimentos de escritório e serviços rápidos de impressão com atendimento carinhoso de bairro.
+            </p>
+
+            <div class="hero-actions-row">
+              <a href="#catalogo" class="btn-kawaii-pink">
+                Ver Catálogo de Itens
+              </a>
+              <a href="#contato" class="btn-secondary-aero">
+                Onde estamos
+              </a>
+            </div>
           </div>
 
-          <a
-            id="popup-wa-btn"
-            href="#"
-            target="_blank"
-            class="btn-popup-wa"
-          >
+          <!-- Lado Direito: Card Ilustrativo com Efeito Bolha e Frutiger Aero -->
+          <div class="hero-visual-card">
+            <span class="pin-corner-pill">Mais praticidade no seu dia ♡</span>
+            
+            <div class="hero-art-display">
+              <i class="ph ph-books"></i>
+              <i class="ph ph-pencil-simple"></i>
+              <i class="ph ph-printer"></i>
+            </div>
+
+            <div class="pin-note-bottom">
+              Itapevi, SP · Linha Fina Papelaria
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CATÁLOGO COM CHIPS E DETALHES
+         ========================================================================== -->
+    <section id="catalogo" class="catalog-section">
+      <div class="container">
+
+        <div class="catalog-card-wrap">
+          <!-- Barra de Cabeçalho do Catálogo com Chips de Filtro -->
+          <div class="catalog-header-bar">
+            <div class="catalog-headline">
+              <h2>Nosso Catálogo</h2>
+              <p>Clique em um ícone para ver os detalhes e consultar disponibilidade.</p>
+            </div>
+
+            <!-- Chips Kawaii em Tons Pastel -->
+            <div class="filter-chip-strip">
+              <button class="filter-chip active" onclick="filtrarCategoria('todos', this)">Todos</button>
+              <button class="filter-chip" onclick="filtrarCategoria('escolar', this)">Escolar</button>
+              <button class="filter-chip" onclick="filtrarCategoria('escritorio', this)">Escritório</button>
+              <button class="filter-chip" onclick="filtrarCategoria('impressao', this)">Impressão</button>
+              <button class="filter-chip" onclick="filtrarCategoria('presentes', this)">Presentes</button>
+            </div>
+          </div>
+
+          <!-- Layout Dividido: Grid de Cards + Janela de Detalhe -->
+          <div class="catalog-content-layout">
+
+            <!-- Grade de Pins dos Produtos -->
+            <div class="pins-grid" id="pinsGrid">
+              
+              <div class="pin-item-card active" data-categoria="escolar" onclick="abrirDetalhe('Cadernos Universitários', 'Escolar', 'Capa dura · 96 folhas pautadas', 'Caderno universitário ideal para a rotina de estudos escolares, faculdade ou organização fofa do dia a dia.', ['Formato: 200mm x 275mm', '96 folhas pautadas', 'Capa dura com acabamento especial', 'Espiral duplo'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-notebook"></i></div>
+                <span class="pin-item-name">Cadernos</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Canetas Coloridas', 'Escolar', 'Esferográfica · Gel · Pastel', 'Canetas macias para escrita suave e divertida. Cores vibrantes e tons pastel para alegrar seus cadernos.', ['Ponta fina 0.7mm e média 1.0mm', 'Cores: azul, preto, rosa pastel e mais', 'Tinta de alta durabilidade e secagem rápida'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-pen-nib"></i></div>
+                <span class="pin-item-name">Canetas</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Lápis & Grafites', 'Escolar', 'Grafite HB / 2B · Lápis de cor', 'Linha de lápis para escrita macia e caixas de lápis de cor para desenhos e anotações criativas.', ['Mina macia e resistente à quebra', 'Fácil de apontar', 'Caixas com 12 e 24 cores vibrantes'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-pencil-simple-slash"></i></div>
+                <span class="pin-item-name">Lápis</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Mochilas Escolares', 'Escolar', 'Ergonômica · Bolsos organizadores', 'Mochilas confortáveis e espaçosas para carregar livros, cadernos e materiais com facilidade.', ['Compartimento para notebook/tablet', 'Alças acolchoadas e reforçadas', 'Modelos fofos e resistentes'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-backpack"></i></div>
+                <span class="pin-item-name">Mochilas</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="escolar" onclick="abrirDetalhe('Estojo Fofinho', 'Escolar', 'Compacto · Zíper duplo', 'Estojo com divisórias ideais para guardar canetas, borrachas e lápis com segurança e organização.', ['Opções em 1 e 2 zíperes', 'Material durável e fácil de limpar', 'Estampas alegres e cores suaves'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-pencil-line"></i></div>
+                <span class="pin-item-name">Estojo</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="escritorio" onclick="abrirDetalhe('Papelaria & Mimos', 'Escritório', 'Clipes · Post-its · Fitas', 'Tudo para manter suas anotações, escritório ou cantinho de estudos organizado com muito charme.', ['Post-its em formatos criativos', 'Clipes coloridos e fita adesiva', 'Grampeadores compactos e tesouras'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-paperclip"></i></div>
+                <span class="pin-item-name">Papelaria</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="escritorio" onclick="abrirDetalhe('Papéis & Sulfites', 'Escritório', 'A4 · 75g e 90g · Resmas', 'Folhas de papel sulfite de excelente alvura para impressões nítidas, trabalhos escolares e relatórios.', ['Formato padrão A4 (210 x 297mm)', 'Resma com 500 folhas de qualidade', 'Compatível com laser e jato de tinta'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-files"></i></div>
+                <span class="pin-item-name">Papéis</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="impressao" onclick="abrirDetalhe('Toners & Tintas', 'Impressão', 'Recargas · Compatíveis · Originais', 'Suprimentos para impressoras com ótimo rendimento para documentos sempre legíveis e nítidos.', ['Modelos para HP, Epson, Brother e Canon', 'Opções preto e colorido', 'Garantia de bom rendimento'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-printer"></i></div>
+                <span class="pin-item-name">Toners</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="impressao" onclick="abrirDetalhe('Serviços de Impressão', 'Impressão', 'P&B · Colorida · Plastificação', 'Impressão expressa de documentos, fotos, trabalhos acadêmicos, xerox e encadernação cuidadosa.', ['Envie seus arquivos pelo WhatsApp', 'Encadernação com espiral e capa protetora', 'Plastificação durável até tamanho A4'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-copy"></i></div>
+                <span class="pin-item-name">Impressão</span>
+              </div>
+
+              <div class="pin-item-card" data-categoria="presentes" onclick="abrirDetalhe('Utilidades & Presentes', 'Presentes', 'Agendas · Canecas · Acessórios', 'Artigos especiais de presente, mimos para presentear quem você gosta e utilidades práticas.', ['Agendas, planners e bloquinhos', 'Embalagens e sacolinhas de presente', 'Mimos e presentes de conveniência'], this)">
+                <div class="pin-icon-wrap"><i class="ph ph-calendar-blank"></i></div>
+                <span class="pin-item-name">Utilidades</span>
+              </div>
+
+            </div>
+
+            <!-- Card de Detalhes Retrô Windows com Estilo Frutiger Aero -->
+            <div class="pin-detail-card" id="detailCard">
+              
+              <div class="detail-card-header">
+                <div class="detail-badge-wrap">
+                  <span class="detail-category-pill" id="detailCategory">Escolar</span>
+                  <span class="detail-category-pill">Disponível na loja</span>
+                </div>
+                <div class="detail-save-indicator">
+                  <i class="ph ph-heart"></i>
+                </div>
+              </div>
+
+              <div class="detail-body-split">
+                <!-- Placeholder de imagem Frutiger Aero com Borda Suave -->
+                <div class="detail-photo-placeholder">
+                  <i class="ph ph-image"></i>
+                  <span>Imagem do produto indisponível no momento.</span>
+                </div>
+
+                <!-- Informações e Ação -->
+                <div class="detail-info-pane">
+                  <h3 class="detail-title" id="detailTitle">Cadernos Universitários</h3>
+                  <div class="detail-specs" id="detailSpecs">Capa dura · 96 folhas pautadas</div>
+                  
+                  <p class="detail-desc" id="detailDesc">
+                    Caderno universitário ideal para a rotina de estudos escolares, faculdade ou organização fofa do dia a dia.
+                  </p>
+
+                  <div class="specs-list-title">Detalhes do produto</div>
+                  <ul class="specs-list" id="detailList">
+                    <li>Formato: 200mm x 275mm</li>
+                    <li>96 folhas pautadas</li>
+                    <li>Capa dura com acabamento especial</li>
+                    <li>Espiral duplo</li>
+                  </ul>
+
+                  <!-- Botão WhatsApp em Verde Menta Cristalino -->
+                  <a 
+                    href="https://wa.me/5511940028922?text=Olá,%20gostaria%20de%20saber%20a%20disponibilidade%20do%20produto:%20Cadernos%20Universitários" 
+                    target="_blank" 
+                    class="btn-whatsapp-consult"
+                    id="detailWaBtn"
+                  >
+                    <i class="ph ph-whatsapp-logo"></i>
+                    Consultar disponibilidade via WhatsApp
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LOCALIZAÇÃO E CONTATO (Strip Card Frutiger Aero)
+         ========================================================================== -->
+    <section id="contato" class="contact-section">
+      <div class="container">
+        <div class="contact-card-strip">
+
+          <div class="contact-meta-group">
+            <div class="contact-icon-pill">
+              <i class="ph ph-map-pin"></i>
+            </div>
+            <div class="contact-meta-text">
+              <div class="label">Endereço</div>
+              <div class="value">Rua Serra de Parima, Itapevi, SP.</div>
+            </div>
+          </div>
+
+          <div class="contact-meta-group">
+            <div class="contact-icon-pill">
+              <i class="ph ph-clock"></i>
+            </div>
+            <div class="contact-meta-text">
+              <div class="label">Horário de funcionamento</div>
+              <div class="value">9h00 às 17h00</div>
+            </div>
+          </div>
+
+          <div class="contact-meta-group">
+            <div class="contact-icon-pill">
+              <i class="ph ph-whatsapp-logo"></i>
+            </div>
+            <div class="contact-meta-text">
+              <div class="label">WhatsApp Oficial</div>
+              <div class="value">(11) 94002-8922</div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5511940028922" target="_blank" class="btn-kawaii-pink">
             <i class="ph ph-whatsapp-logo"></i>
-            Consultar disponibilidade via WhatsApp
+            Chamar no WhatsApp
           </a>
+
         </div>
       </div>
+    </section>
+  </main>
 
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        Linha Fina ♡ 2026 — Papelaria & Conveniência
+      </div>
+      <div>
+        Itapevi, SP · Material escolar e impressões com carinho
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <script src="app.js"></script>
+  <!-- ==========================================================================
+       SCRIPTS DE INTERATIVIDADE
+       ========================================================================== -->
+  <script>
+    // Atualiza a janela de detalhes ao clicar em qualquer item
+    function abrirDetalhe(nome, categoria, specs, desc, lista, cardElem) {
+      document.querySelectorAll('.pin-item-card').forEach(c => c.classList.remove('active'));
+      if (cardElem) cardElem.classList.add('active');
+
+      document.getElementById('detailTitle').innerText = nome;
+      document.getElementById('detailCategory').innerText = categoria;
+      document.getElementById('detailSpecs').innerText = specs;
+      document.getElementById('detailDesc').innerText = desc;
+
+      const ul = document.getElementById('detailList');
+      ul.innerHTML = '';
+      lista.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = item;
+        ul.appendChild(li);
+      });
+
+      const btn = document.getElementById('detailWaBtn');
+      btn.href = `https://wa.me/5511940028922?text=Olá,%20gostaria%20de%20saber%20a%20disponibilidade%20do%20produto:%20${encodeURIComponent(nome)}`;
+    }
+
+    // Filtrar por Categoria (Pills de filtro)
+    function filtrarCategoria(categoria, btn) {
+      document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.pin-item-card');
+      cards.forEach(card => {
+        if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Barra de pesquisa dinâmica
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function() {
+      const termo = this.value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.pin-item-card');
+
+      cards.forEach(card => {
+        const nome = card.querySelector('.pin-item-name').innerText.toLowerCase();
+        if (nome.includes(termo)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // ==========================================================================
+    // INTERAÇÃO DRAG & DROP DAS BOLHAS FRUTIGER AERO (MOUSE & TOUCH MOBILE)
+    // ==========================================================================
+    let draggedBubble = null;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    function startDrag(bubble, clientX, clientY) {
+      draggedBubble = bubble;
+      draggedBubble.classList.add('dragging');
+
+      const rect = draggedBubble.getBoundingClientRect();
+      offsetX = clientX - rect.left;
+      offsetY = clientY - rect.top;
+
+      draggedBubble.style.animation = 'none';
+      draggedBubble.style.bottom = 'auto';
+      draggedBubble.style.left = `${rect.left}px`;
+      draggedBubble.style.top = `${rect.top}px`;
+      draggedBubble.style.transform = 'scale(1.1)';
+    }
+
+    function moveDrag(clientX, clientY) {
+      if (!draggedBubble) return;
+      const newLeft = clientX - offsetX;
+      const newTop = clientY - offsetY;
+      draggedBubble.style.left = `${newLeft}px`;
+      draggedBubble.style.top = `${newTop}px`;
+    }
+
+    function endDrag() {
+      if (!draggedBubble) return;
+
+      const bubble = draggedBubble;
+      bubble.classList.remove('dragging');
+      draggedBubble = null;
+
+      const currentRect = bubble.getBoundingClientRect();
+      bubble.style.left = `${currentRect.left}px`;
+      bubble.style.top = `${currentRect.top}px`;
+      bubble.style.bottom = 'auto';
+
+      const remainingHeight = currentRect.top + currentRect.height;
+      const speed = 120;
+      const duration = Math.max(3.5, remainingHeight / speed);
+
+      bubble.style.animation = `riseFromReleased ${duration.toFixed(2)}s linear infinite`;
+    }
+
+    document.querySelectorAll('.bubble-float').forEach(bubble => {
+      // Evento Mouse (Desktop)
+      bubble.addEventListener('mousedown', function(e) {
+        if (e.button !== 0) return;
+        startDrag(this, e.clientX, e.clientY);
+        e.preventDefault();
+      });
+
+      // Evento Touch (Mobile/Tablet)
+      bubble.addEventListener('touchstart', function(e) {
+        if (e.touches.length !== 1) return;
+        const touch = e.touches[0];
+        startDrag(this, touch.clientX, touch.clientY);
+        e.preventDefault();
+      }, { passive: false });
+    });
+
+    window.addEventListener('mousemove', function(e) {
+      moveDrag(e.clientX, e.clientY);
+    });
+
+    window.addEventListener('touchmove', function(e) {
+      if (!draggedBubble) return;
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        moveDrag(touch.clientX, touch.clientY);
+      }
+      e.preventDefault();
+    }, { passive: false });
+
+    window.addEventListener('mouseup', endDrag);
+    window.addEventListener('touchend', endDrag);
+    window.addEventListener('touchcancel', endDrag);
+
+    // ==========================================================================
+    // INTERRUPTOR DE ESTOURO E DESATIVAÇÃO DAS BOLHAS (POPPING ON/OFF)
+    // ==========================================================================
+    const bubbleToggle = document.getElementById('bubbleToggle');
+
+    bubbleToggle.addEventListener('change', function() {
+      const bubbles = document.querySelectorAll('.bubble-float');
+
+      if (!this.checked) {
+        // Desligou o interruptor: cada bolha estoura com efeito pop sonoro visual
+        bubbles.forEach((bubble, index) => {
+          // Pega a posição visual congelada onde a bolha estiver
+          const rect = bubble.getBoundingClientRect();
+          bubble.style.animation = 'none';
+          bubble.style.left = `${rect.left}px`;
+          bubble.style.top = `${rect.top}px`;
+          bubble.style.bottom = 'auto';
+
+          // Estouro escalonado orgânico
+          setTimeout(() => {
+            bubble.classList.add('popping');
+            // Remove o elemento após terminar a animação de pop
+            setTimeout(() => {
+              bubble.style.display = 'none';
+            }, 350);
+          }, index * 45);
+        });
+      } else {
+        // Ligou novamente: reativa as bolhas subindo do início
+        bubbles.forEach((bubble) => {
+          bubble.classList.remove('popping');
+          bubble.style.display = '';
+          bubble.style.animation = '';
+          bubble.style.left = '';
+          bubble.style.top = '';
+          bubble.style.bottom = '';
+        });
+      }
+    });
+  </script>
 </body>
 </html>
-

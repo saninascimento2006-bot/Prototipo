@@ -59,32 +59,30 @@ The system's signature gesture is **shape geometry**: 16px radius (`{rounded.md}
 ## Typography
 
 ### Font Family
-**Pin Sans** is Pinterest's proprietary geometric sans-serif used across every text role on every page. It carries weights 400 (regular), 500 (medium), 600 (semibold), and 700 (bold), and falls back through a long stack — `-apple-system` → `system-ui` → `Segoe UI` → `Roboto` → `Helvetica Neue` → `Arial` plus emoji fallbacks. The face's distinctive trait is its tight letter-spacing at display sizes (-1.2px on `{typography.display-xl}` and `{typography.heading-xl}`), which gives 70px headlines a confident, friendly density rather than the airy spread of more conventional display geometric sans faces.
+Para conferir a personalidade artesanal e calorosa de uma papelaria de conveniência de bairro ao site **Linha Fina** (aliada à clareza e estrutura do Pinterest), foram integradas duas fontes principais do Google Fonts:
+
+1. **Finger Paint** (`'Finger Paint', cursive`):
+   - **Aplicação:** Títulos principais (`h1`, `h2`, `h3`), subtítulos em destaque, nome da marca no logotipo ("Linha Fina"), badges de novidades e cabeçalhos de cards.
+   - **Personalidade:** Traz traço artístico com textura de pintura/giz de cera, destacando a essência de material escolar e papelaria criativa.
+
+2. **Pangolin** (`'Pangolin', cursive, sans-serif`):
+   - **Aplicação:** Todo o restante da interface — parágrafos descritivos, listas de detalhes/especificações de produtos, botões de ação e CTAs, chips de filtro, inputs de busca e links da barra de navegação.
+   - **Personalidade & Correção de Acentos:** Tipografia manuscrita descontraída, calorosa e com **suporte nativo completo a todos os acentos e cedilhas do português**, garantindo que palavras como *Você*, *Acessórios*, *Preço* e *Impressão* fiquem uniformes e sem desproporções.
+
+*(Nota: Anteriormente utilizava-se a referência pura do Pin Sans / Inter / Manrope)*
 
 ### Hierarchy
 
-| Token | Size | Weight | Line Height | Letter Spacing | Use |
-|---|---|---|---|---|---|
-| `{typography.display-xl}` | 70px | 600 | 1.1 | -1.2px | Marketing hero headline ("Create the life you love on Pinterest") |
-| `{typography.display-lg}` | 44px | 700 | 1.15 | -0.8px | "Where your content can thrive" creator hero |
-| `{typography.heading-xl}` | 28px | 700 | 1.2 | -1.2px | Section heading ("Bring your favorite ideas to life", "Pinterest for your brand") |
-| `{typography.heading-lg}` | 22px | 600 | 1.25 | 0 | Sub-section heading, modal title ("Welcome to Pinterest") |
-| `{typography.heading-md}` | 18px | 600 | 1.3 | 0 | Card title, in-grid pin label |
-| `{typography.body-md}` | 16px | 400 | 1.4 | 0 | Body copy, modal body, default paragraph |
-| `{typography.body-strong}` | 16px | 600 | 1.4 | 0 | Inline emphasis, primary nav link, form label |
-| `{typography.body-sm}` | 14px | 400 | 1.4 | 0 | Footer copy, in-grid pin metadata, helper text |
-| `{typography.body-sm-strong}` | 14px | 700 | 1.4 | 0 | Search-result count label, table-header text |
-| `{typography.caption-md}` | 12px | 500 | 1.5 | 0 | Caption text, link metadata |
-| `{typography.caption-sm}` | 12px | 400 | 1.4 | 0 | Smallest utility text, copyright |
-| `{typography.link-md}` | 16px | 600 | 1.4 | 0 | Inline anchor link in body prose |
-| `{typography.button-md}` | 14px | 700 | 1 | 0 | Standard primary/secondary button label |
-| `{typography.button-sm}` | 12px | 700 | 1 | 0 | Compact pill chip, in-card button |
-
-### Principles
-The system has an unusually steep size jump between display and body — `{typography.display-xl}` (70px) drops directly to `{typography.body-md}` (16px) on the home hero with no intermediate tier between. The negative tracking on the largest tiers (-1.2px / -0.8px) creates a tighter, more confident headline than a default geometric sans would deliver, and the body copy sits at a generous 1.4 line-height to keep multi-line descriptions breathing.
-
-### Note on Font Substitutes
-Pin Sans is proprietary. The closest open-source substitute is **Inter** (weights 400 / 500 / 600 / 700) — its geometry, x-height, and metric balance match Pin Sans within ~3% at body sizes. **Manrope** is a strong secondary substitute for the display tier where slightly tighter letterspacing helps the 70px headline feel weighted. Apply -1.2px tracking on the substitute at display sizes regardless of which substitute is chosen.
+| Token | Família | Tamanho | Peso | Uso |
+|---|---|---|---|---|
+| `{typography.display-xl}` | **Finger Paint** | 38px–44px | 400 | Título principal Hero ("Tudo o que você precisa...") |
+| `{typography.heading-xl}` | **Finger Paint** | 26px–28px | 400 | Título de seções ("Nosso Catálogo") |
+| `{typography.heading-lg}` | **Finger Paint** | 20px–22px | 400 | Título de detalhes do produto & Logotipo |
+| `{typography.badge}` | **Finger Paint** | 11px–13px | 400 | Badges pill, chips e labels de identificação |
+| `{typography.body-lg}` | **Gaegu** | 21px | 400 | Subtítulo e texto de destaque do Hero |
+| `{typography.body-md}` | **Gaegu** | 18px–19px | 400 / 700 | Descrição de produtos, especificações e parágrafos |
+| `{typography.button}` | **Gaegu** | 19px–20px | 700 | Botões primários, CTA do WhatsApp e navegação |
+| `{typography.caption}` | **Gaegu** | 15px–17px | 400 | Textos de ajuda, rodapé e placeholders |
 
 ## Layout
 
